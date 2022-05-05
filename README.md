@@ -1,7 +1,14 @@
 # Rock-Paper-Scissors-Lizard-Spock
 
-This is an implementation of the iconic Rock-Paper-Scissors-Lizard-Spock game, featuring in **Season 5**, **Episode 17** - *The Rothman Disintegration* - of **The Big Bang Theory** show. This episode was originally aired on the 16<sup>th</sup> of February 2012. While Sheldon's intuitive explainaition of the rules is available [here](https://www.youtube.com/watch?v=x5Q6-wMx-K8), the game should be immediately recognizable to a true geek.
+This is an implementation of the iconic Rock-Paper-Scissors-Lizard-[Spock](https://intl.startrek.com/database_article/spock) game, featuring in **Season 5**, **Episode 17** - *The Rothman Disintegration* - of **The Big Bang Theory** show. This episode was originally aired on the 16<sup>th</sup> of February 2012. While Sheldon's intuitive explainaition of the rules is available [here](https://www.youtube.com/watch?v=x5Q6-wMx-K8), the game should be immediately recognizable to any true geek.
 
+## Rules of the game
+
+"Oh, it is very simple. Scissors cuts paper. Paper covers rock. Rock crushes lizard. Lizard poisons [Spock](https://www.amazon.com/I-Am-Spock-Leonard-Nimoy-audiobook/dp/B001H071EU/ref=sr_1_2?crid=2KRM58IYEZ3QX&keywords=I+am+spock&qid=1651781329&sprefix=i+am+spock%2Caps%2C383&sr=8-2). [Spock](https://en.wikipedia.org/wiki/Leonard_Nimoy) smashes scissors. Scissors decapitate lizard. Lizard eats paper. Paper disproves [Spock](https://intl.startrek.com/database_article/spock). [Spock](https://www.amazon.com/Am-Not-Spock-Leonard-Nimoy/dp/0890871175/ref=sr_1_1?crid=3355SCP81PX3W&keywords=I+am+not+spock&qid=1651781425&s=audible&sprefix=i+am+not+spock%2Caudible%2C148&sr=1-1-catcorr) vaporises rock and as it always has rock crushes scissors."
+
+![alt text](rpsls.webp)
+
+**Fun fact**: A single [mixed strategy Nash equilibrium](https://www.youtube.com/watch?v=IjgYLM4KgFg) of the game is playing every strategy with probability of 20%
 
 ## Milestone 1
 
