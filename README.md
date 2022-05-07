@@ -16,7 +16,7 @@ Fig. 1 - Outcomes of RPSLS on a diagram.
 
 **Fun fact**: A single [mixed strategy Nash equilibrium](https://www.youtube.com/watch?v=IjgYLM4KgFg) of the game is playing every strategy with probability of 20%
 
-## Milestone 1
+## Image Recognition
 
 - Used [TeachableMachine](https://teachablemachine.withgoogle.com/) to generate the sample images and a [Keras-Tensorflow](https://keras.io/about/) deep learning model that can be taught to classify them.
 - My model features 6 basic image classes: *Rock*, *Paper*, *Scissors*, *Lizard*, *Spock* and *Nothing*. The training sample consists of 500 images of each class.
@@ -32,13 +32,22 @@ Fig. 1 - Outcomes of RPSLS on a diagram.
 Fig. 2 - Computer Vision classification - <em>Nothing</em> and <em>Spock</em>.
 </p>
 
-## Milestone 2
+## Environment
 
 - Created new virtual environment <em>rps</em> with
 ```conda
 conda create -n rps python=3.8
 ```
+- Installed [opencv-python](https://pypi.org/project/opencv-python/), 
+[tensorflow](https://en.wikipedia.org/wiki/Leonard_Nimoy),
+and [ipykernel](https://en.wikipedia.org/wiki/Leonard_Nimoy)
+- Checked the environment using
+```pip
+pip freeze > requirements.txt
+```
+**Note**: A great source for opencv tutorials can be found [here](https://docs.opencv.org/4.x/d6/d00/tutorial_py_root.html)
 
+## Milestone 3
 
 
 
