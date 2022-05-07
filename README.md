@@ -29,7 +29,7 @@ Fig. 1 - Outcomes of RPSLS on a diagram.
 </p>
 
 <p align = "center">
-Fig. 2 - Computer Vision classification - *'Nothing'*.
+Fig. 2 - Computer Vision classification - <em>Nothing</em> and <em>Spock</em>.
 </p>
 
 ## Milestone 2
