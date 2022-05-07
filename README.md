@@ -34,6 +34,13 @@ Fig. 2 - Computer Vision classification - <em>Nothing</em> and <em>Spock</em>.
 
 ## Milestone 2
 
+- Created new virtual environment <em>rps</em> with
+```conda
+conda create -n rps python=3.8
+```
+
+
+
 
 ## Placeholder 
 
