@@ -10,13 +10,17 @@ This is an implementation of the iconic Rock-Paper-Scissors-Lizard-[Spock](https
     <img width="66%" src="https://github.com/PiotrZJelonek/RPS/blob/develop/rpsls.webp?raw=true">
 </p> 
 
+<p align = "center">
+Fig. 1 - Outcomes of RPSLS on a diagram.
+</p>
+
 **Fun fact**: A single [mixed strategy Nash equilibrium](https://www.youtube.com/watch?v=IjgYLM4KgFg) of the game is playing every strategy with probability of 20%
 
 ## Milestone 1
 
 - Used [TeachableMachine](https://teachablemachine.withgoogle.com/) to generate the sample images and a [Keras-Tensorflow](https://keras.io/about/) deep learning model that can be taught to classify them.
 - My model features 6 basic image classes: *Rock*, *Paper*, *Scissors*, *Lizard*, *Spock* and *Nothing*. The training sample consists of 500 images of each class.
-- Hyperparameters: number of epochs **N=50**, size of each batch **n=16**, learning rate **0.01** 
+- Hyperparameters: number of epochs **N=50**, size of each batch **n=16**, learning rate **$\rho$=0.01** 
 - Trained the model in a cloud on the provided sample. Then downloaded it to be used locally by the application (game).
 
 <p align="center" width="100%">
@@ -24,8 +28,12 @@ This is an implementation of the iconic Rock-Paper-Scissors-Lizard-[Spock](https
     <img width="33%" src="https://github.com/PiotrZJelonek/RPS/blob/develop/spock.png?raw=true">
 </p>
 
+<p align = "center">
+Fig. 2 - Computer Vision classification - *'Nothing'*.
+</p>
 
-> Insert an image/screenshot of what you have built so far here, using this markup language syntax ![alt text](image.jpg)
+## Milestone 2
+
 
 ## Placeholder 
 
