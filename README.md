@@ -39,8 +39,12 @@ Fig. 2 - Computer Vision classification - <em>Nothing</em> and <em>Spock</em>.
 conda create -n rps python=3.8
 ```
 - Installed [opencv-python](https://pypi.org/project/opencv-python/), 
-[tensorflow](https://en.wikipedia.org/wiki/Leonard_Nimoy),
-and [ipykernel](https://en.wikipedia.org/wiki/Leonard_Nimoy)
+[tensorflow](https://www.tensorflow.org/learn),
+and [ipykernel](https://pypi.org/project/ipykernel/)
+- Added [black](https://pypi.org/project/black/) to *blacken* the code later via
+```black
+black RPS.py
+```
 - Checked the environment using
 ```pip
 pip freeze > requirements.txt
