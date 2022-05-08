@@ -82,6 +82,13 @@ else:
 
 """
 ```
+- Basic functionality
+<p align="center" width="100%">
+    <img width="66%" src="https://github.com/PiotrZJelonek/RPS/blob/develop/cant_loose_with_spock.png?raw=true">
+</p> 
+<p align = "center">
+Fig. 3 - You can't loose with Spock.
+</p>
 
 ## Placeholder 
 
