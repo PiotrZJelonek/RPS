@@ -41,7 +41,7 @@ conda create -n rps python=3.8
 - Installed [opencv-python](https://pypi.org/project/opencv-python/), 
 [tensorflow](https://www.tensorflow.org/learn),
 and [ipykernel](https://pypi.org/project/ipykernel/)
-- Added [black](https://pypi.org/project/black/) to *blacken* the code later via
+- Added [black](https://pypi.org/project/black/) to the mix to *blacken* the code later via
 ```black
 black RPS.py
 ```
@@ -51,9 +51,37 @@ pip freeze > requirements.txt
 ```
 **Note**: A great source for opencv tutorials can be found [here](https://docs.opencv.org/4.x/d6/d00/tutorial_py_root.html)
 
-## Milestone 3
+## Determining the winner
 
+- It is practical to map loosing actions to winnig actions using a distionary
+```python
+"""
+lost_against = {
+    'Rock': ['Lizard', 'Scissors'], 
+    'Paper': ['Rock','Spock'], 
+    'Scissors': ['Paper','Lizard'], 
+    'Spock': ['Scissors','Rock'], 
+    'Lizard': ['Spock', 'Paper'] 
+    }
+"""
+```
+- Then to determine the winner, it is enough to check
+```python
+"""
+if computer_action in lost_against[player_action]:
 
+    print("Player won")
+
+elif player_action in lost_against[computer_action]:
+
+    print("Computer won")
+
+else: 
+    
+    print("It is a draw")
+
+"""
+```
 
 ## Placeholder 
 
