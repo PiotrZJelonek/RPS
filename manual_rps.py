@@ -40,6 +40,39 @@ def get_winner(player_action: str, computer_action: str) -> int:
 
     return won
 
+def play(actions: list, lost_against: dict):
+
+    print("\nAll hail Sam Kass! Hail!\n")
+
+    player_win_count = 0
+    computer_win_count = 0
+    game_continues = True
+
+    while game_continues:
+
+        player_action = get_player_choice(actions + ['Nothing'])
+
+        if player_action != 'Nothing':
+
+            computer_action = get_computer_choice(actions)
+            won = get_winner(player_action, computer_action)
+
+            if won == 1: 
+                player_win_count += 1
+            elif won == -1:
+                computer_win_count +=1
+
+            game_continues = (player_win_count < 3 and computer_win_count < 3)
+
+    if player_win_count == 3:
+
+        print("Congrats. You won the entire game!")
+    
+    elif computer_win_count == 3:
+
+        print("Computer won the game. So sorry!")
+
+    print("")
 
 actions = ['Rock','Paper','Scissors','Lizard','Spock']
 lost_against = {
@@ -49,21 +82,5 @@ lost_against = {
     'Spock': ['Scissors','Rock'], 
     'Lizard': ['Spock', 'Paper'] 
     }
-player_win_count = 0
-computer_win_count = 0
 
-print("\nAll hail Sam Kass! Hail!\n")
-
-player_action = get_player_choice(actions + ['Nothing'])
-
-if player_action != 'Nothing':
-
-    computer_action = get_computer_choice(actions)
-    won = get_winner(player_action, computer_action)
-
-    if won == 1: 
-        player_win_count += 1
-    elif won == -1:
-        computer_win_count +=1
-
-game_continues = (player_win_count < 3 and computer_win_count < 3)
+play(actions, lost_against)
