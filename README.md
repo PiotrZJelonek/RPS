@@ -69,15 +69,12 @@ lost_against = {
 ```python
 """
 if computer_action in lost_against[player_action]:
-
     print("Player won")
-
+    
 elif player_action in lost_against[computer_action]:
-
     print("Computer won")
 
 else: 
-    
     print("It is a draw")
 
 """
@@ -87,7 +84,7 @@ else:
     <img width="66%" src="https://github.com/PiotrZJelonek/RPS/blob/develop/cant_loose_with_spock.png?raw=true">
 </p> 
 <p align = "center">
-Fig. 3 - You can't loose with Spock.
+Fig. 3 - You can't loose with <em>Spock</em>. 
 </p>
 
 ## Placeholder 

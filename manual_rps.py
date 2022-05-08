@@ -50,12 +50,12 @@ def play(actions: list, lost_against: dict):
 
     while game_continues:
 
-        player_action = get_player_choice(actions + ['Nothing'])
+        player_action = get_player_choice(actions=actions + ['Nothing'])
 
         if player_action != 'Nothing':
 
-            computer_action = get_computer_choice(actions)
-            won = get_winner(player_action, computer_action)
+            computer_action = get_computer_choice(actions=actions)
+            won = get_winner(player_action=player_action, computer_action=computer_action)
 
             if won == 1: 
                 player_win_count += 1
@@ -83,4 +83,4 @@ lost_against = {
     'Lizard': ['Spock', 'Paper'] 
     }
 
-play(actions, lost_against)
+play(actions=actions, lost_against=lost_against)
