@@ -20,9 +20,7 @@ Fig. 1 - Outcomes of RPSLS on a diagram.
 
 - Used [TeachableMachine](https://teachablemachine.withgoogle.com/) to generate the sample images and a [Keras-Tensorflow](https://keras.io/about/) deep learning model that can be taught to classify them.
 - My model features 6 basic image classes: *Rock*, *Paper*, *Scissors*, *Lizard*, *Spock* and *Nothing*. The training sample consists of 500 images of each class.
-- Hyperparameters: number of epochs **N=50**, size of each batch **n=16**, learning rate **$\rho$=0.01** 
-
-<img src="https://render.githubusercontent.com/render/math?math=e^{i \pi} = -1">
+- Hyperparameters: number of epochs **N=50**, size of each batch **n=16**, learning rate **<img src="https://render.githubusercontent.com/render/math?math=\rho=0.01">**
 
 - Trained the model in a cloud on the provided sample. Then downloaded it to be used locally by the application (game).
 
