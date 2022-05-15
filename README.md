@@ -53,7 +53,7 @@ pip freeze > requirements.txt
 
 ## Determining the winner
 
-- It is practical to map loosing actions to winnig actions using a distionary
+- It is practical to map loosing actions to winnig actions using a dictionary
 ```python
 """
 lost_against = {
@@ -65,7 +65,7 @@ lost_against = {
     }
 """
 ```
-- Then to determine the winner, it is enough to check
+- To determine the winner, it is enough then to check
 ```python
 """
 if computer_action in lost_against[player_action]:
@@ -84,7 +84,7 @@ else:
     <img width="66%" src="https://github.com/PiotrZJelonek/RPS/blob/develop/cant_loose_with_spock.png?raw=true">
 </p> 
 <p align = "center">
-Fig. 3 - You can't loose with <em>Spock</em>. 
+Fig. 3 - You can't loose with <em>Spock</em>! 
 </p>
 
 ## Placeholder 
