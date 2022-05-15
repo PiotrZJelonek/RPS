@@ -36,7 +36,7 @@ def countdown(number_of_counts = 3, count_duration = 1.5):
     
     print('...')
 
-def get_prediction(model, actions_list: list, delay = 3.0):
+def get_prediction(model, actions_list: list):
 
     # setup
     cap = cv2.VideoCapture(0)
