@@ -66,13 +66,20 @@ def test_camera(camera_duration: float = 5.0):
         # capture framy-by-frame
         ret, frame = cap.read()
 
-        cv2.putText(frame, "3", (200, 200), cv2.FONT_HERSHEY_COMPLEX, 2, (0, 255, 255), cv2.LINE_4, 1)
-
+        cv2.putText(
+            frame,
+            "3",
+            (200, 200),
+            cv2.FONT_HERSHEY_COMPLEX,
+            2,
+            (0, 255, 255),
+            cv2.LINE_4,
+            1,
+        )
 
         # show a frame titled 'Action'
         cv2.imshow("Action", frame)
 
-    
         # Press q to close the window
         if cv2.waitKey(1) & 0xFF == ord("q"):
             break
