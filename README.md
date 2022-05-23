@@ -88,9 +88,9 @@ else:
 Fig. 3 - You can't loose with <em>Spock</em>! 
 </p>
 
-## Countrdown! 
+## Countdown
 
-- My <em>countdown</em> function - an early (but functional) version
+- My <em>countdown</em> function - an early (but functional!) version
 
 ```python
 """
@@ -126,7 +126,7 @@ def countdown(number_of_counts: int = 3, count_duration: float = 1.0):
     print("")
 """
 ```
-- At the end I integrated it with a function, identifying an image from the camera.
+- At the end I integrated <em>countdown</em>  with a function, identifying an image from the camera.
 
 ## Final game being played
 
@@ -137,3 +137,15 @@ def countdown(number_of_counts: int = 3, count_duration: float = 1.0):
     <img width="33%" src="https://github.com/PiotrZJelonek/RPS/blob/develop/lizard_2.png?raw=true">
 </p>
 
+<p align = "center">
+Fig. 4 - Now <em>countdown</em>  is displayed in the camera.  
+</p>
+
+- Now the game counts down from 3 down to 1. Next the image is captured after another 3 seconds.
+- Snapshot from the terminal
+<p align="center" width="100%">
+    <img width="66%" src="https://github.com/PiotrZJelonek/RPS/blob/develop/full_game.png?raw=true">
+</p> 
+<p align = "center">
+Fig. 5 - Log of the full game
+</p>
