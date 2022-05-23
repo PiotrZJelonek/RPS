@@ -9,100 +9,77 @@ import os
 #                              FUNCTIONS                             #
 ######################################################################
 
-
-def countdown(number_of_counts: int = 3, count_duration: float = 1.0):
-
-    # total countdown time
-    total_delay = number_of_counts * count_duration
-    countdown = number_of_counts
-
-    # output
-    print("Countdown!")
-    print("")
-
-    # initialize time count
-    start = time.time()
-    end = start
-    time_elapsed = 0
-
-    # wait 'count_duration' seconds for every count
-    while time_elapsed < total_delay:
-
-        # wait 'count_duration' seconds
-        while (end - start) - time_elapsed < count_duration:
-            end = time.time()
-
-        # output
-        print(countdown)
-
-        # update
-        time_elapsed += count_duration
-        countdown -= 1
-
-    print("")
-
-
 def get_computer_choice(actions: list) -> str:
+    """
+    Choose (at random) computer action.
+
+    Args:
+        actions: a list, containing actions
+
+    Returns:
+        a string, denoting a selected action
+    """
 
     action = choice(actions)
     print(f"Computer action: {action}")
 
     return action
 
+def get_prediction(model: object, actions: list, number_of_counts: int = 3, count_duration: float = 1.0, camera_duration: float = 3.0) -> str:
+    """
+    Get image. Use keras-tensorflow model to classify the image. Infer player's action. 
 
-def test_camera(camera_duration: float = 5.0):
+    Args:
+        model:            an object, keras-tensorflow model
+        actions:          a list, containing labels of player's actions
+        number_of_counts: an integer, a highest number during countdown
+        count_duration:   a float, time given number is displayed in the camera
+        camera_duration:  a float, time delay before caountdown and an image being taken
 
-    # setup
-    cap = cv2.VideoCapture(0)
+    Returns:
+        a string an inferred players' action
+    """
 
-    # initialize time count
-    start = time.time()
-    end = start
-
-    # turn on camera
-    # capture image for 'camera_duration' seconds
-    while end - start < camera_duration:
-
-        # capture framy-by-frame
-        ret, frame = cap.read()
-
-        cv2.putText(
-            frame,
-            "3",
-            (200, 200),
-            cv2.FONT_HERSHEY_COMPLEX,
-            2,
-            (0, 255, 255),
-            cv2.LINE_4,
-            1,
-        )
-
-        # show a frame titled 'Action'
-        cv2.imshow("Action", frame)
-
-        # Press q to close the window
-        if cv2.waitKey(1) & 0xFF == ord("q"):
-            break
-
-        # update time
-        end = time.time()
-
-
-def get_prediction(model: object, actions: list, camera_duration: float = 3.0):
+    # GET PREDICTION
 
     # setup
     cap = cv2.VideoCapture(0)
     data = np.ndarray(shape=(1, 224, 224, 3), dtype=np.float32)
 
     # initialize time count
+    total_time = number_of_counts*count_duration + camera_duration
+    countdown = number_of_counts
+    time_elapsed_reset = 0 
+    time_elapsed = 0  
     start = time.time()
-    end = start
+    delayed_start= start
+
+    # define color
+    color=(255*0.87,255*0.63,255*0.87)
 
     # capture image for 'camera_duration' seconds
-    while end - start < camera_duration:
+    while time_elapsed  < total_time:
 
         # capture framy-by-frame
         ret, frame = cap.read()
+
+        # initiate the countdown        
+        if countdown > 0:
+
+            # print countdown
+            cv2.putText(frame, str(countdown),(300, 250), cv2.FONT_HERSHEY_COMPLEX,2,color,cv2.LINE_4,1,)
+
+            # update countdown
+            if time_elapsed_reset > count_duration:
+
+                delayed_start += count_duration
+                countdown -=1
+
+        # # save the pic
+        # if countdown == 2:
+
+        #     cv2.imwrite('/home/piotr/Documents/projects/RPS/mypic.png',frame)
+        
 
         # show a frame titled 'Action'
         cv2.imshow("Action", frame)
@@ -112,7 +89,9 @@ def get_prediction(model: object, actions: list, camera_duration: float = 3.0):
             break
 
         # update time
-        end = time.time()
+        current_time = time.time() 
+        time_elapsed_reset = current_time - delayed_start
+        time_elapsed  = current_time - start      
 
     # CLEANUP
 
@@ -146,6 +125,17 @@ def get_prediction(model: object, actions: list, camera_duration: float = 3.0):
 
 
 def get_winner(player_action: str, computer_action: str, lost_against: dict) -> int:
+    """
+    Determine who won.
+
+    Args:
+        player_action: a string, denoting inferred player action
+        computer_action: a string, denoting action selected by a computer
+        lost_against: a dict, determining a winner
+
+    Returns:
+        An int, +1 if a player won, -1 if a computer won
+    """
 
     if computer_action in lost_against[player_action]:
 
@@ -167,7 +157,17 @@ def get_winner(player_action: str, computer_action: str, lost_against: dict) -> 
     return won
 
 
-def play(actions: list, lost_against: dict, camera_duration: float = 5.0):
+def play(actions: list, lost_against: dict, number_of_counts: int=3, count_duration: float=2.0, camera_duration: float = 3.0):
+    """
+    Play the game.
+
+    Args: 
+        actions:          a list, containing labels of player's actions
+        lost_against:     a dict, determining a winner
+        number_of_counts: an integer, a highest number during countdown
+        count_duration:   a float, time given number is displayed in the camera
+        camera_duration:  a float, time delay before caountdown and an image being taken
+    """
 
     # setup
     model = load_model("keras_model.h5")
@@ -179,11 +179,6 @@ def play(actions: list, lost_against: dict, camera_duration: float = 5.0):
     print("\nAll hail Sam Kass! Hail!\n")
     print("Press 'Q' any time to Quit.\n")
 
-    # test camera
-    print("Calibrating camera...", end="")
-    test_camera(camera_duration=7.0)
-    print("\n")
-
     # initialisation
     player_win_count = 0
     computer_win_count = 0
@@ -191,13 +186,8 @@ def play(actions: list, lost_against: dict, camera_duration: float = 5.0):
 
     while game_continues:
 
-        # initiate the countdown
-        countdown(number_of_counts=3, count_duration=1.5)
-
         # read player action
-        player_action = get_prediction(
-            model=model, actions=actions, camera_duration=camera_duration
-        )
+        player_action = get_prediction(model=model, actions=actions, number_of_counts=number_of_counts, count_duration=count_duration, camera_duration=camera_duration)
 
         if player_action != "Nothing":
 
@@ -228,7 +218,6 @@ def play(actions: list, lost_against: dict, camera_duration: float = 5.0):
 
     print("")
 
-
 ######################################################################
 #                            THE RPS GAME                            #
 ######################################################################
@@ -246,4 +235,4 @@ lost_against = {
 }
 
 # play the game
-play(actions=actions, lost_against=lost_against, camera_duration=6.0)
+play(actions=actions, lost_against=lost_against, number_of_counts=3, count_duration=2.5, camera_duration=3.0)

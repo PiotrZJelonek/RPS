@@ -50,7 +50,7 @@ black RPS.py
 ```pip
 pip freeze > requirements.txt
 ```
-**Note**: A great source for opencv tutorials can be found [here](https://docs.opencv.org/4.x/d6/d00/tutorial_py_root.html)
+**Note**: A great source for OpenCV tutorials can be found [here](https://docs.opencv.org/4.x/d6/d00/tutorial_py_root.html)
 
 ## Determining the winner
 
@@ -88,22 +88,52 @@ else:
 Fig. 3 - You can't loose with <em>Spock</em>! 
 </p>
 
-## Placeholder 
+## Countrdown! 
 
-- Lorem ipsum
+- My <em>countdown</em> function - an early (but functional) version
 
-- Example: The FastAPI framework allows for fast and easy construction of APIs and is combined with pydantic, which is used to assert the data types of all incoming data to allow for easier processing later on. The server is ran locally using uvicorn, a library for ASGI server implementation.
-  
 ```python
-"""Insert your code here"""
+"""
+def countdown(number_of_counts: int = 3, count_duration: float = 1.0):
+
+    # total countdown time
+    total_delay = number_of_counts * count_duration
+    countdown = number_of_counts
+
+    # output
+    print("Countdown!")
+    print("")
+
+    # initialize time count
+    start = time.time()
+    end = start
+    time_elapsed = 0
+
+    # wait 'count_duration' seconds for every count
+    while time_elapsed < total_delay:
+
+        # wait 'count_duration' seconds
+        while (end - start) - time_elapsed < count_duration:
+            end = time.time()
+
+        # output
+        print(countdown)
+
+        # update
+        time_elapsed += count_duration
+        countdown -= 1
+
+    print("")
+"""
 ```
+- At the end I integrated it with a function, identifying an image from the camera.
 
-- Example below:
+## Final game being played
 
-```bash
-/bin/kafka-topics.sh --list --zookeeper 127.0.0.1:2181
-```
+- Playing the game
 
-- Answer some of these questions in the next few bullet points. What have you built? What technologies have you used? Why have you used those?
+<p align="center" width="100%">
+    <img width="33%" src="https://github.com/PiotrZJelonek/RPS/blob/develop/spock_1.png?raw=true">
+    <img width="33%" src="https://github.com/PiotrZJelonek/RPS/blob/develop/lizard_2.png?raw=true">
+</p>
 
-> Insert screenshot of what you have built working.
