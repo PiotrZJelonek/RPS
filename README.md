@@ -7,7 +7,7 @@ This is an implementation of the iconic Rock-Paper-Scissors-Lizard-[Spock](https
 "Oh, it is very simple. Scissors cuts paper. Paper covers rock. Rock crushes lizard. Lizard poisons [Spock](https://www.amazon.com/I-Am-Spock-Leonard-Nimoy-audiobook/dp/B001H071EU/ref=sr_1_2?crid=2KRM58IYEZ3QX&keywords=I+am+spock&qid=1651781329&sprefix=i+am+spock%2Caps%2C383&sr=8-2). [Spock](https://en.wikipedia.org/wiki/Leonard_Nimoy) smashes scissors. Scissors decapitate lizard. Lizard eats paper. Paper disproves [Spock](https://intl.startrek.com/database_article/spock). [Spock](https://www.amazon.com/Am-Not-Spock-Leonard-Nimoy/dp/0890871175/ref=sr_1_1?crid=3355SCP81PX3W&keywords=I+am+not+spock&qid=1651781425&s=audible&sprefix=i+am+not+spock%2Caudible%2C148&sr=1-1-catcorr) vaporises rock and as it always has rock crushes scissors."
 
 <p align="center" width="100%">
-    <img width="66%" src="https://github.com/PiotrZJelonek/RPS/blob/develop/rpsls.webp?raw=true">
+    <img width="66%" src="https://github.com/PiotrZJelonek/RPS/blob/develop/pics/rpsls.webp?raw=true">
 </p> 
 
 <p align = "center">
@@ -25,8 +25,8 @@ Fig. 1 - Outcomes of RPSLS on a diagram.
 - Trained the model in a cloud on the provided sample. Then downloaded it to be used locally by the application (game).
 
 <p align="center" width="100%">
-    <img width="33%" src="https://github.com/PiotrZJelonek/RPS/blob/develop/nothing.png?raw=true">
-    <img width="33%" src="https://github.com/PiotrZJelonek/RPS/blob/develop/spock.png?raw=true">
+    <img width="33%" src="https://github.com/PiotrZJelonek/RPS/blob/develop/pics/nothing.png?raw=true">
+    <img width="33%" src="https://github.com/PiotrZJelonek/RPS/blob/develop/pics/spock.png?raw=true">
 </p>
 
 <p align = "center">
@@ -82,7 +82,7 @@ else:
 ```
 - Basic functionality
 <p align="center" width="100%">
-    <img width="66%" src="https://github.com/PiotrZJelonek/RPS/blob/develop/cant_loose_with_spock.png?raw=true">
+    <img width="66%" src="https://github.com/PiotrZJelonek/RPS/blob/develop/pics/cant_loose_with_spock.png?raw=true">
 </p> 
 <p align = "center">
 Fig. 3 - You can't loose with <em>Spock</em>! 
@@ -133,8 +133,8 @@ def countdown(number_of_counts: int = 3, count_duration: float = 1.0):
 - Playing the game
 
 <p align="center" width="100%">
-    <img width="33%" src="https://github.com/PiotrZJelonek/RPS/blob/develop/spock_1.png?raw=true">
-    <img width="33%" src="https://github.com/PiotrZJelonek/RPS/blob/develop/lizard_2.png?raw=true">
+    <img width="33%" src="https://github.com/PiotrZJelonek/RPS/blob/develop/pics/spock_1.png?raw=true">
+    <img width="33%" src="https://github.com/PiotrZJelonek/RPS/blob/develop/pics/lizard_2.png?raw=true">
 </p>
 
 <p align = "center">
@@ -144,7 +144,7 @@ Fig. 4 - Now <em>countdown</em>  is displayed in the camera.
 - Now the game counts down from 3 down to 1. Next the image is captured after another 3 seconds.
 - Snapshot from the terminal
 <p align="center" width="100%">
-    <img width="66%" src="https://github.com/PiotrZJelonek/RPS/blob/develop/full_game.png?raw=true">
+    <img width="66%" src="https://github.com/PiotrZJelonek/RPS/blob/develop/pics/full_game.png?raw=true">
 </p> 
 <p align = "center">
 Fig. 5 - Log of the full game
